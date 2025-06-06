@@ -44,6 +44,9 @@ lcb_code_generation_eval_cfg = dict(
         type=LCBCodeGenerationEvaluator,
         num_process_evaluate=32,
         timeout=6,
+        release_version='release_v5',
+        start_date='2024-08-01',
+        end_date='2025-02-01'
     ),
     pred_role='BOT',
 )
@@ -51,8 +54,9 @@ lcb_code_generation_eval_cfg = dict(
 LCB_datasets = [
     dict(
         type=LCBCodeGenerationDataset,
-        abbr=f'lcb_code_generation_run{idx}',
+        abbr=f'lcb_code_generation',
         path='./data/code_generation_lite',
+        local_mode=True,
         reader_cfg=lcb_code_generation_reader_cfg,
         infer_cfg=lcb_code_generation_infer_cfg,
         eval_cfg=lcb_code_generation_eval_cfg,
@@ -60,5 +64,4 @@ LCB_datasets = [
         start_date='2024-08-01',
         end_date='2025-02-01'
     )
-    for idx in range(int(os.getenv('N_REPEAT', 1)))
 ]

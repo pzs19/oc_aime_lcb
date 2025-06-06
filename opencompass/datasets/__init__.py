@@ -2,6 +2,7 @@ from .advglue import *  # noqa: F401, F403
 from .afqmcd import *  # noqa: F401, F403
 from .agieval import *  # noqa: F401, F403
 from .aime2024 import *  # noqa: F401, F403
+from .aime2025 import *  # noqa: F401, F403
 from .anli import AnliDataset  # noqa: F401, F403
 from .anthropics_evals import *  # noqa: F401, F403
 from .apps import *  # noqa: F401, F403

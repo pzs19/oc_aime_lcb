@@ -14,13 +14,13 @@ N_GPU=$(echo $CUDA_VISIBLE_DEVICES | tr ',' '\n' | wc -l)
 echo "N_GPU: $N_GPU"
 
 source ~/.bashrc
-source activate opencompass
+source activate opencompass4
 
 export N_REPEAT=2
 
 opencompass -r \
     -w outputs/reasoning \
-    --datasets aime2024_gen_wwpp aime2025_gen_wwpp lcb_gen_wwpp \
+    --datasets aime2024_wwpp_gen aime2025_wwpp_gen lcb_wwpp_gen \
     --models aime_lcb_models_debug \
     --summarizer aime_lcb \
     --max-num-worker $N_GPU \
@@ -36,7 +36,7 @@ export MAX_OUT_LEN=32768
 
 opencompass -r \
     -w outputs/reasoning \
-    --datasets aime2024_gen_wwpp aime2025_gen_wwpp lcb_gen_wwpp \
+    --datasets aime2024_wwpp_gen aime2025_wwpp_gen lcb_wwpp_gen \
     --models aime_lcb_models_api \
     --summarizer aime_lcb \
     --max-num-worker $N_GPU \
