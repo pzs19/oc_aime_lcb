@@ -27,10 +27,12 @@ opencompass -r \
     --dump-eval-details True \
     --mode $MODE
 
-export DEEPSEEK_API_KEY=""
-export DEEPSEEK_API_BASE=""
+export MODEL_NAME="deepseek-ai/DeepSeek-R1-0528"
 export OPENAI_API_KEY=""
 export OPENAI_API_BASE=""
+export TEMPERATURE=0.6
+export MAX_SEQ_LEN=32768
+export MAX_OUT_LEN=32768
 
 opencompass -r \
     -w outputs/reasoning \
